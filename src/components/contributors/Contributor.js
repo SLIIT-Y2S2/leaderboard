@@ -65,51 +65,48 @@ const Contributor = ({ contributor, index }) => {
         </div>
       </Item> */
       }
-      <Item
-        variant="rounded"
-        sx={{ boxShadow: 4, borderRadius: 2, marginBottom: 6 }}
-      >
-        <div className="flex flex-row  justify-between items-center pr-6 pl-6">
-          <div className="flex flex-col items-start ">
-            <Typography
-              variant="h6"
-              sx={{ fontWeight: "bold", lineHeight: 2 }}
-              color="black"
-              component="h2"
-            >
-              {contributor.login}
-            </Typography>
-            <Typography color="blue " sx={{ fontWeight: "medium" }}>
-              {contributor.points}
-            </Typography>
-          </div>
-          <div>
-            {index === 0 && (
+      {index != 0 && (
+        <Item
+          variant="rounded"
+          sx={{ boxShadow: 4, borderRadius: 2, marginBottom: 6 }}
+        >
+          <div className="flex flex-row  justify-between items-center pr-6 pl-6">
+            <div className="flex flex-col items-start ">
               <Typography
-                variant="h4"
-                color="yellow"
-                sx={{ fontWeight: "bold" }}
+                variant="h6"
+                sx={{ fontWeight: "bold", lineHeight: 2 }}
+                color="black"
+                component="h2"
               >
-                {index + 1}
+                {contributor.login}
               </Typography>
-            )}
-            {index === 1 && (
-              <Typography
-                variant="h4"
-                color="green"
-                sx={{ fontWeight: "bold" }}
-              >
-                {index + 1}
+              <Typography color="blue " sx={{ fontWeight: "medium" }}>
+                {contributor.points}
               </Typography>
-            )}
-            {index === 2 && (
-              <Typography variant="h4" color="red" sx={{ fontWeight: "bold" }}>
-                {index + 1}
-              </Typography>
-            )}
+            </div>
+            <div>
+              {index === 1 && (
+                <Typography
+                  variant="h4"
+                  color="green"
+                  sx={{ fontWeight: "bold" }}
+                >
+                  {index + 1}
+                </Typography>
+              )}
+              {index === 2 && (
+                <Typography
+                  variant="h4"
+                  color="red"
+                  sx={{ fontWeight: "bold" }}
+                >
+                  {index + 1}
+                </Typography>
+              )}
+            </div>
           </div>
-        </div>
-      </Item>
+        </Item>
+      )}
     </div>
   );
 };
